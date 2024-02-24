@@ -1,4 +1,4 @@
-name: KLint CI
+name: KTLint CI
 
 on:
   push:
