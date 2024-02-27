@@ -1,0 +1,37 @@
+name: Publisher CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ktlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run ktlint
+        run: ./gradlew ktlintCheck
+
+  kotest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Kotest
+        run: ./gradlew test
+
+  kover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Kover for code coverage
+        run: ./gradlew koverCheck
+
+  build:
+    needs: [ktlint, kotest, kover]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build App
+        run: ./gradlew assembleRelease

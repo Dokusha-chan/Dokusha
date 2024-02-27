@@ -3,8 +3,6 @@ import org.jlleitschuh.gradle.ktlint.KtlintPlugin
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 import org.jlleitschuh.gradle.ktlint.tasks.GenerateReportsTask
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.androidApplication) apply false
     alias(libs.plugins.kotlinAndroid) apply false
@@ -12,6 +10,7 @@ plugins {
 }
 
 allprojects {
+    //Configure KTLint for all modules
     plugins.apply(KtlintPlugin::class.java)
 
     configure<KtlintExtension> {
@@ -30,5 +29,14 @@ allprojects {
 
     tasks.withType<GenerateReportsTask> {
         reportsOutputDirectory.set(layout.buildDirectory.dir("reports/ktlint/"))
+    }
+
+    tasks.withType<Test> {
+        useJUnitPlatform()
+    }
+
+    tasks.withType<JavaCompile> {
+        sourceCompatibility = "8"
+        targetCompatibility = "8"
     }
 }
