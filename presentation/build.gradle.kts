@@ -35,6 +35,9 @@ android {
     kotlinOptions {
         jvmTarget = libs.versions.jvmTarget.get()
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -43,6 +46,9 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
+    implementation(libs.navigationFragment)
+    implementation(libs.navigationUi)
+
     implementation(libs.hiltAndroid)
     kapt(libs.hiltAndroidCompiler)
     testImplementation(libs.junit)
