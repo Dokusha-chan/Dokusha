@@ -14,4 +14,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Dokusha"
-include(":app")
+include(":presentation")
+include(":data")
+include(":domain")
