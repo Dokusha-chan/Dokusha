@@ -1,7 +1,15 @@
 [versions]
+versionCode = "1"
+versionName = "1.0"
+compileSdk = "34"
+minSdk = "27"
+targetSdk = "34"
+jvmTarget = "1.8"
+
 agp = "8.2.2"
 kotlin = "1.9.22"
 ktlint = "11.3.2"
+hilt = "2.50"
 core-ktx = "1.12.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
@@ -12,6 +20,8 @@ constraintlayout = "2.1.4"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+hiltAndroid = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hiltAndroidCompiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
@@ -22,4 +32,7 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlinKapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 ktlint = { id = 'org.jlleitschuh.gradle.ktlint', version.ref = 'ktlint' }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
