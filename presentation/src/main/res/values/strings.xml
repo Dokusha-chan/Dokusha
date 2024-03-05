@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Dokusha</string>
+
+    <string name="bottom_navigation_library_title">Library</string>
 </resources>
