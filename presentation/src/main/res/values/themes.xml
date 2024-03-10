@@ -4,6 +4,10 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
-
+    <!-- Splash Screen theme. -->
+    <style name="Theme.Dokusha.SplashScreen" parent="Theme.SplashScreen">
+        <item name="postSplashScreenTheme">@style/Theme.Dokusha</item>
+    </style>
+    <!-- Base application theme. -->
     <style name="Theme.Dokusha" parent="Base.Theme.Dokusha" />
 </resources>

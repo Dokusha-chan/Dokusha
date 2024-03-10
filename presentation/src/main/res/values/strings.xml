@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Dokusha</string>
 
-    <string name="bottom_navigation_library_title">Library</string>
+    <string name="fragment_library_title">Library</string>
+    <string name="fragment_history_title">History</string>
+    <string name="fragment_settings_title">Settings</string>
+    <string name="library_action_filter">Filter</string>
+    <string name="library_action_search">Search</string>
+    <string name="search_hint">Search...</string>
 </resources>
